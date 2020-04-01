@@ -43,15 +43,15 @@ def paddle_a_up():
     y +=20
     paddle_a.sety(y)
 
-def paddle_a_up():
+def paddle_a_down():
     y = paddle_a.ycor()
     y -=20
     paddle_a.sety(y)
 
 #keyboard Bindings
 window.listen()
-window.onkeypress(paddle_a_up,"w")
-window.onkeypress(paddle_a_up,"s")
+window.onkeypress(paddle_a_down,"w")
+window.onkeypress(paddle_a_down,"s")
 
 while True:
     window.update()
