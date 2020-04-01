@@ -43,9 +43,15 @@ def paddle_a_up():
     y +=20
     paddle_a.sety(y)
 
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y -=20
+    paddle_a.sety(y)
+
 #keyboard Bindings
 window.listen()
 window.onkeypress(paddle_a_up,"w")
+window.onkeypress(paddle_a_up,"s")
 
 while True:
     window.update()
