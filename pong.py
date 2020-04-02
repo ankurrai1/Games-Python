@@ -82,7 +82,7 @@ while True:
     if ball.ycor()> -290:
         ball.sety(290)
         ball.dy *=-1
-        
+
     # left right boder checking
     if ball.ycox()>390:
         ball.goto(0,0)
@@ -91,3 +91,8 @@ while True:
     if ball.ycor()> -390:
         ball.sety(290)
         ball.dy *=-1
+
+    #paddle ball collision detection
+    if ( ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() <paddle_b.ycor()+50 and ball.ycor()>paddle_b.ycor() -50):
+        ball.setx(340)
+        ball.dx*=-1
