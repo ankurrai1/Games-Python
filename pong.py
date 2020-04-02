@@ -82,3 +82,12 @@ while True:
     if ball.ycor()> -290:
         ball.sety(290)
         ball.dy *=-1
+        
+    # left right boder checking
+    if ball.ycox()>390:
+        ball.goto(0,0)
+        ball.dx *=-1
+
+    if ball.ycor()> -390:
+        ball.sety(290)
+        ball.dy *=-1
