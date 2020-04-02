@@ -73,3 +73,12 @@ while True:
     window.update()
     ball.setx(ball.xcor()+ball.dx)
     ball.sety(ball.ycor()+ball.dy)
+
+    # top bottom boder checking
+    if ball.ycor()>290:
+        ball.sety(290)
+        ball.dy *=-1
+
+    if ball.ycor()> -290:
+        ball.sety(290)
+        ball.dy *=-1
