@@ -11,6 +11,7 @@ window = turtle.Screen()
 window.title("Pong Game By ankurrai1")
 window.bgcolor("black")
 window.setup(width = Width, height = Height)
+window.tracer(1)
 
 # Paddle A
 paddle_a = turtle.Turtle()
@@ -40,7 +41,7 @@ ball.goto(0,0)
 
 # this two will define the speed of ball move
 ball.dx = 5
-ball.dy = 5
+ball.dy = - 5
 
 def paddle_a_up():
     y = paddle_a.ycor()
@@ -79,20 +80,20 @@ while True:
         ball.sety(290)
         ball.dy *=-1
 
-    if ball.ycor()> -290:
-        ball.sety(290)
+    if ball.ycor()< -290:
+        ball.sety(-290)
         ball.dy *=-1
 
     # left right boder checking
-    if ball.ycox()>390:
+    if ball.xcor()>390:
         ball.goto(0,0)
         ball.dx *=-1
 
-    if ball.ycor()> -390:
-        ball.sety(290)
+    if ball.xcor()< -390:
+        ball.goto(0,0)
         ball.dy *=-1
 
-    #paddle ball collision detection
+    # paddle ball collision detection
     if ( ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() <paddle_b.ycor()+50 and ball.ycor()>paddle_b.ycor() -50):
         ball.setx(340)
         ball.dx*=-1
