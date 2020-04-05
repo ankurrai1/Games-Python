@@ -5,6 +5,8 @@ import turtle
 
 Width = 800
 Height = 600
+score_a = 0
+score_b = 0
 
 #Window setup
 window = turtle.Screen()
@@ -46,7 +48,7 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("player A: 0 player B: 0",align="center",font=("Arial",12, "normal"))
+pen.write("player A: 0 player B: 0",align="center",font=("Arial",15, "normal"))
 
 # this two will define the speed of ball move
 ball.dx = 5
@@ -97,10 +99,16 @@ while True:
     if ball.xcor()>390:
         ball.goto(0,0)
         ball.dx *=-1
+        score_a += 1
+        pen.clear()
+        pen.write("player A:{} player B: {}".format(score_a,score_b),align="center",font=("Arial",15, "normal"))
 
     if ball.xcor()< -390:
         ball.goto(0,0)
         ball.dy *=-1
+        score_b += 1
+        pen.clear()
+        pen.write("player A:{} player B: {}".format(score_a,score_b),align="center",font=("Arial",15, "normal"))
 
     # paddle ball collision detection
     if ( ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() <paddle_b.ycor()+50 and ball.ycor()>paddle_b.ycor() -50):
