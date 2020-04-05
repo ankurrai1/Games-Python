@@ -2,6 +2,7 @@
 # this game is based on turtle
 
 import turtle
+import os
 
 Width = 800
 Height = 600
@@ -90,10 +91,12 @@ while True:
     if ball.ycor()>290:
         ball.sety(290)
         ball.dy *=-1
+        os.system("afplay pong.wav&")
 
     if ball.ycor()< -290:
         ball.sety(-290)
         ball.dy *=-1
+        os.system("afplay pong.wav&")
 
     # left right boder checking
     if ball.xcor()>390:
@@ -114,7 +117,9 @@ while True:
     if ( ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() <paddle_b.ycor()+50 and ball.ycor()>paddle_b.ycor() -50):
         ball.setx(340)
         ball.dx*=-1
+        os.system("afplay pong.wav&")
 
     if ( ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() <paddle_a.ycor()+50 and ball.ycor()>paddle_a.ycor() -50):
         ball.setx(-340)
         ball.dx*=-1
+        os.system("afplay pong.wav&")
