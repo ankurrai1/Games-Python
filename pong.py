@@ -39,6 +39,15 @@ ball.color("white")
 ball.penup()
 ball.goto(0,0)
 
+# Pen
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color("white")
+pen.penup()
+pen.hideturtle()
+pen.goto(0, 260)
+pen.write("player A: 0 player B: 0",align="center",font=("Arial",12, "normal"))
+
 # this two will define the speed of ball move
 ball.dx = 5
 ball.dy = - 5
