@@ -41,10 +41,10 @@ def getpen_to():
     return pen
 
 
+def update_score(pen,A,B):
+    pen.clear()
+    pen.write("player A:{} player B: {}".format(A,B),align="center",font=("Arial",15, "normal"))
 
-# Pen
-
-pen.write("player A: 0 player B: 0",align="center",font=("Arial",15, "normal"))
 
 # this two will define the speed of ball move
 ball.dx = 5
