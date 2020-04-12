@@ -60,32 +60,12 @@ def move_paddel(paddle,direction,movement = 20):
         y -=20
     paddle.sety(y)
 
-def paddle_a_up():
-    y = paddle_a.ycor()
-    y +=20
-    paddle_a.sety(y)
-
-def paddle_a_down():
-    y = paddle_a.ycor()
-    y -=20
-    paddle_a.sety(y)
-
-def paddle_b_up():
-    y = paddle_b.ycor()
-    y +=20
-    paddle_b.sety(y)
-
-def paddle_b_down():
-    y = paddle_b.ycor()
-    y -=20
-    paddle_b.sety(y)
-
 #keyboard Bindings
 window.listen()
-window.onkeypress(paddle_a_up,"w")
-window.onkeypress(paddle_a_down,"s")
-window.onkeypress(paddle_b_up,"Up")
-window.onkeypress(paddle_b_down,"Down")
+window.onkeypress(move_paddel(paddle_a,"up"),"w")
+window.onkeypress(move_paddel(paddle_a,"down"),"s")
+window.onkeypress(move_paddel(paddle_b,"up"),"Up")
+window.onkeypress(move_paddel(paddle_b,"down"),"Down")
 
 while True:
     window.update()
