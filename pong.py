@@ -51,6 +51,15 @@ def update_score(pen,A,B):
 ball.dx = 5
 ball.dy = - 5
 
+
+def move_paddel(paddle,direction,movement = 20):
+    y = paddle.ycor()
+    if direction == "up":
+            y +=20
+    else if direction == "down":
+        y -=20
+    paddle.sety(y)
+
 def paddle_a_up():
     y = paddle_a.ycor()
     y +=20
