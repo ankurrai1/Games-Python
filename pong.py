@@ -31,13 +31,19 @@ draw_fig(350,0,"square","white")
 draw_fig(0,0,"square","white")
 
 
+def getpen_to():
+    pen = turtle.Turtle()
+    pen.speed(0)
+    pen.color("white")
+    pen.penup()
+    pen.hideturtle()
+    pen.goto(0, 260)
+    return pen
+
+
+
 # Pen
-pen = turtle.Turtle()
-pen.speed(0)
-pen.color("white")
-pen.penup()
-pen.hideturtle()
-pen.goto(0, 260)
+
 pen.write("player A: 0 player B: 0",align="center",font=("Arial",15, "normal"))
 
 # this two will define the speed of ball move
