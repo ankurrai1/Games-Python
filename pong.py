@@ -88,15 +88,13 @@ while True:
         ball.goto(0,0)
         ball.dx *=-1
         score_a += 1
-        pen.clear()
-        pen.write("player A:{} player B: {}".format(score_a,score_b),align="center",font=("Arial",15, "normal"))
+        update_score(score_a,score_b)
 
     if ball.xcor()< -390:
         ball.goto(0,0)
         ball.dy *=-1
         score_b += 1
-        pen.clear()
-        pen.write("player A:{} player B: {}".format(score_a,score_b),align="center",font=("Arial",15, "normal"))
+        update_score(score_a,score_b)
 
     # paddle ball collision detection
     if ( ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() <paddle_b.ycor()+50 and ball.ycor()>paddle_b.ycor() -50):
