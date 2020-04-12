@@ -16,16 +16,19 @@ window.bgcolor("black")
 window.setup(width = Width, height = Height)
 window.tracer(1)
 
-# Paddle A
-paddle_a = turtle.Turtle()
-paddle_a.speed(0)
-paddle_a.shape("square")
-paddle_a.color("white")
-paddle_a.shapesize(stretch_wid = 5, stretch_len = 1)
-paddle_a.penup()
-paddle_a.goto(-350,0)
+def draw_paddle(x,y,shape,color):
+    paddle = turtle.Turtle()
+    paddle.speed(0)
+    paddle.shape(shape)
+    paddle.color(color)
+    paddle.shapesize(stretch_wid = 5, stretch_len = 1)
+    paddle.penup()
+    paddle.goto(x,y)
+    
+draw_paddle(-350,0,"square","white")
+draw_paddle(350,0,"square","white")
 
-# Paddle B
+
 paddle_b = turtle.Turtle()
 paddle_b.speed(0)
 paddle_b.shape("square")
