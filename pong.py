@@ -16,19 +16,20 @@ window.bgcolor("black")
 window.setup(width = Width, height = Height)
 window.tracer(1)
 
-def draw_fig(x,y,shape,color,shapfact = True):
+def draw_fig(x,y,shape,color,isPaddle = True):
     paddle = turtle.Turtle()
     paddle.speed(0)
     paddle.shape(shape)
     paddle.color(color)
-    if shapfact:
+    if isPaddle:
         paddle.shapesize(stretch_wid = 5, stretch_len = 1)
     paddle.penup()
     paddle.goto(x,y)
+    return paddle
 
-draw_fig(-350,0,"square","white")
-draw_fig(350,0,"square","white")
-draw_fig(0,0,"square","white")
+paddle_a = draw_fig(-350,0,"square","white")
+paddle_b = draw_fig(350,0,"square","white")
+ball = draw_fig(0,0,"square","white",False)
 
 
 def getpen_to():
